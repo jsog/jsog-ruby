@@ -8,7 +8,7 @@ The official repository is (https://github.com/jsog/jsog-ruby).
 
 ## Download
 
-Jsog is available in <??>
+Jsog is available from rubygems.org:
 
     $ gem install jsog
 
