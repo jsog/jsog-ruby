@@ -31,6 +31,11 @@ describe JSOG do
 
       encoded['@id'].should == encoded['me']['@ref']
     end
+
+    it "encodes nil as-is" do
+      encoded = JSOG.encode(nil)
+      encoded.should be_nil
+    end
   end
 
   context "#decode" do
@@ -53,6 +58,18 @@ describe JSOG do
       decoded = JSOG.decode(jsog)
 
       decoded.should be(decoded['me'])
+    end
+
+    it "decodes nil as-is" do
+      decoded = JSOG.decode(nil)
+      decoded.should be_nil
+    end
+
+    it "decodes JSON normally" do
+      json = { "foo" => "bar" }
+      decoded = JSOG.decode(json)
+
+      decoded.should == json
     end
   end
 end
