@@ -1,4 +1,4 @@
-# Serializing JavaScript Object Graphs with Ruby
+# JavaScript Object Graphs with Ruby
 
 This Ruby gem serializes and deserializes cyclic object graphs in the [JSOG format](https://github.com/jsog/jsog).
 
