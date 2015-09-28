@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'jsog'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.date        = '2013-05-26'
   s.summary     = "JSOG serializer and deserializer"
   s.description = "Library to serialize and deserialize object graphs in the JSOG format"
