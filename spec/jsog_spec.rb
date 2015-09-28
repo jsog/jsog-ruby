@@ -32,6 +32,15 @@ describe JSOG do
       encoded['@id'].should == encoded['me']['@ref']
     end
 
+    it "encodes an object graph with arrays that have objects in them" do
+      thing = { "name" => "thing" }
+      inner = { "name" => "inner" }
+      thing["things"] = [inner]
+
+      encoded = JSOG.encode(thing)
+      encoded["things"].first["name"].should == "inner"
+    end
+
     it "encodes nil as-is" do
       encoded = JSOG.encode(nil)
       encoded.should be_nil
@@ -58,6 +67,15 @@ describe JSOG do
       decoded = JSOG.decode(jsog)
 
       decoded.should be(decoded['me'])
+    end
+
+    it "decodes an object graph with arrays that have objects in them" do
+      jsog = { "@id" => "1", "name" => "thing" }
+      inner = { "@id" => "2", "name" => "inner" }
+      jsog["things"] = [inner]
+
+      decoded = JSOG.decode(jsog)
+      decoded["things"].first["name"].should == "inner"
     end
 
     it "decodes nil as-is" do
