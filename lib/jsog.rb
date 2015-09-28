@@ -62,7 +62,7 @@ class JSOG
     end
 
     def encode_array(original, sofar)
-      return original.map { |val| encode(val, sofar) }
+      return original.map { |val| do_encode(val, sofar) }
     end
 
     #
@@ -94,7 +94,7 @@ class JSOG
     end
 
     def decode_array(encoded, found)
-      return encoded.map { |value| decode(value, found) }
+      return encoded.map { |value| do_decode(value, found) }
     end
 
   end
