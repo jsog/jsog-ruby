@@ -10,20 +10,20 @@ The official repository is (https://github.com/jsog/jsog-ruby).
 
 Jsog is available from rubygems.org:
 
-    $ gem install jsog
+	$ gem install jsog
 
 ## Usage
 
 This code mimics the standard *JSON* ruby package:
 
-    require 'jsog'
+	require 'jsog'
 
 	string = JSOG.dump(cyclicGraph);
 	cyclicGraph = JSOG.parse(string);
 
 It can be used to convert between object graphs directly:
 
-    require 'jsog'
+	require 'jsog'
 
 	jsogStructure = JSOG.encode(cyclicGraph);	// has { '@ref': 'ID' } links instead of cycles
 	cyclicGraph = JSOG.decode(jsogStructure);
