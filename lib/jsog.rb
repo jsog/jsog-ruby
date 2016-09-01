@@ -87,7 +87,7 @@ class JSOG
       found[id.to_s] = result if id # be defensive if someone uses numbers in violation of the spec
 
       encoded.each do |key, value|
-        result[key] = do_decode(value, found)
+        result[key] = do_decode(value, found) unless key == '@id'
       end
 
       return result
